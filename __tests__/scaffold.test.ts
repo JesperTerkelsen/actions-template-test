@@ -54,5 +54,29 @@ describe('scaffold', () => {
         )
       ).toMatch(name);
     });
+
+    it('works w/ deeper paths', async () => {
+      const name = 'My awesome app';
+      const targetPath = './build/3';
+      await fs.emptyDir(targetPath);
+
+      await expect(
+        runTemplate({
+          url: './template/deeply/nested_template',
+          targetPath,
+          values: {
+            name,
+          },
+        })
+      ).resolves.toBeUndefined();
+
+      // contains expected name
+      expect(
+        await fs.readFile(
+          path.resolve(process.cwd(), targetPath, 'index.js'),
+          'utf8'
+        )
+      ).toMatch(name);
+    });
   });
 });

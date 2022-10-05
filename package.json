@@ -47,9 +47,9 @@
     "ts-jest": "^28.0.2",
     "typescript": "^4.5.5"
   },
-	"overrides":{
-		"@gitbeaker/node": {
-			"got": "^11.8.5"
-		}
-	}
+  "overrides": {
+    "@gitbeaker/node": {
+      "got": "^11.8.5"
+    }
+  }
 }
