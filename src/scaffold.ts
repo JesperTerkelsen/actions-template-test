@@ -35,6 +35,7 @@ export async function runTemplate(input: {
     integrations: null as any,
   });
 
+  const basePath = `${process.cwd()}/template.yml`;
   const context: ActionContext<any> = {
     logger,
     workspacePath: process.cwd(),
@@ -43,7 +44,7 @@ export async function runTemplate(input: {
       return fs.mkdtemp(path.resolve(os.tmpdir(), 'scaffold'));
     },
     templateInfo: {
-      baseUrl: `file://${process.cwd()}/${input.url}`,
+      baseUrl: `file://${basePath}`,
       entityRef: `component:default/${path.basename(process.cwd())}`,
     },
     // unused in testing but required for typing
