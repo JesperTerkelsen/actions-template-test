@@ -34,7 +34,7 @@ jobs:
               "name": "App",
               "type": "public"
             }
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
       # run assertion script
@@ -54,7 +54,7 @@ jobs:
               "name": "App",
               "type": "public"
             }
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
       # run assertion script
